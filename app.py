@@ -20,9 +20,8 @@ def take_screenshot():
             browser = p.chromium.launch()
             page = browser.new_page()
             page.goto(url)
-            screenshot = page.screenshot()
+            screenshot = page.screenshot(full_page = True)
             browser.close()
-    
         return screenshot, 200, {"Content-Type": "image/png"}
     
     except Exception as e:
